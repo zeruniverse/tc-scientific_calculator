@@ -90,7 +90,7 @@ void Exit(char *ErrorCode)
 printf("%s\n",ErrorCode);
 printf("Press any key to skip this part and continue");
 getch();
-exit(0);
+
 }
 
 long WidthBytes(long Width,int BitCount)
@@ -138,9 +138,9 @@ BITMAPFILEHEADER bfh;
 BITMAPINFOHEADER bih;
 unsigned char SrcData,data;
 InitGraph();
-    if((fp=fopen("CCC.bmp","rb"))==NULL)
+    if((fp=fopen("LOGO.bmp","rb"))==NULL)
 {
-Exit("Can Not Load Our Logo.\n");
+Exit("Can Not Load Our Logo.\n");return;
 }
 fread(&bfh,sizeof(BITMAPFILEHEADER),1,fp);
 fread(&bih,sizeof(BITMAPINFOHEADER),1,fp);

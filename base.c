@@ -4,7 +4,7 @@ int checkbase(int p)
    switch(p)
    {
      case 2:return 10;
-   case 3:return 2;
+	 case 3:return 2;
 	 case 4:return 8;
 	 case 5:return 16;
 	}
@@ -103,8 +103,11 @@ void basen()
 	     {mode=-1;return;}
 
 
-
-    	 if(MouseLeftFlag==1||pn!=0)  /* 鼠标左键单击的处理 */
+    	 if(leftpress()!=1 && pn==0)    /* 鼠标左键未单击的处理 */
+    	 {
+           move_mouse();
+    	 }
+    	 else if(MouseLeftFlag==1||pn!=0)  /* 鼠标左键单击的处理 */
     	 {
     	     if(MouseLeftFlag==1){
 			 MouseLeftFlag=0;   /* 置标志为0，防止单击1次左键而多次进入 */ 
